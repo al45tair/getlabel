@@ -1,0 +1,29 @@
+#! /bin/sh
+#
+#  Save the coloured labels of each file in the specified directory in a
+#  mac:colour property.
+#
+
+if [ $# -ne 0 ]; then
+  cd "$1"
+fi
+for file in `svn ls`; do
+  colour=`getlabel "$file"` && current=`svn propget mac:colour "$file"`
+  if [ $? -ne 0 ]; then
+      exit $?
+  fi
+
+  if [ "$colour" = "none" ]; then
+      if [ "$current" != "none" -a -n "$current" ]; then
+          svn propdel mac:colour "$file"
+      fi
+  else
+      if [ "$current" != "$colour" ]; then
+          svn propset mac:colour "$colour" "$file"
+      fi
+  fi
+
+  if [ $? -ne 0 ]; then
+      exit $?
+  fi
+done

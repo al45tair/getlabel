@@ -1,0 +1,44 @@
+.Dd July 18, 2007
+.Os
+.Dt SETLABEL 1 LOCAL
+.Sh NAME
+.Nm setlabel
+.Nd set the Finder label colour for a file
+.Sh SYNOPSIS
+.Nm setlabel
+.Ar file
+.Ar colour
+.Sh DESCRIPTION
+.Nm 
+changes the Finder label for the specified
+.Ar file
+to the specified
+.Ar colour .
+The following colour names may be specified:
+.Pp
+.Bl -hang -compact -width 'red' -offset indent
+.It none
+(Causes setlabel to remove the label from the file.)
+.Pp
+.It red
+.It orange
+.It yellow
+.It green
+.It blue
+.It purple
+.It grey
+.El
+.Sh RETURN VALUES
+Returns 0 if successful, 1 otherwise.
+.Sh SEE ALSO
+.Xr getlabel 1
+.Xr chflags 1
+.Xr chmod 1
+.Xr GetFileInfo 1
+.Xr SetFile 1
+.Sh HISTORY
+The
+.Nm
+command was written for users of Mac OS X on the 18th of July 2007.
+.Sh AUTHORS
+.An Alastair J. Houghton
