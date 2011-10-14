@@ -1,0 +1,28 @@
+Command line Finder-labelling tools
+===================================
+
+I couldn't find an easy way to get at the finder label colours from the
+command line, so I wrote these two short command line tools to do so.
+
+The first, getlabel, takes a list of filenames and outputs a list of
+label colours.  The second, setlabel, takes a single filename and a colour
+and sets the label for that file.
+
+There are two scripts included in this archive that show one way to
+use the tools to store Finder label colours in Subversion repositories.
+To store the colours, you just do
+
+  svn-save-labels
+
+and then commit the changes.  To restore them after an update, simply run
+
+  svn-restore-labels
+
+The label colours are stored as versioned properties (the property name is
+"mac:colour") in the repository.
+
+Anyway, I hope someone finds these useful (I'm sure they will).
+
+Regards to all,
+
+Alastair

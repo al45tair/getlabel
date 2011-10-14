@@ -1,0 +1,44 @@
+.Dd July 18, 2007
+.Os
+.Dt GETLABEL 1 LOCAL
+.Sh NAME
+.Nm getlabel
+.Nd read Finder label colours
+.Sh SYNOPSIS
+.Nm getlabel
+.Ar
+.Sh DESCRIPTION
+For each
+.Ar file
+given as an argument,
+.Nm
+displays the colour of the Finder label for that file.
+.Pp
+The following colour names are used:
+.Pp
+.Bl -hang -compact -width 'red' -offset indent
+.It none
+(Means that there is no label for this file.)
+.Pp
+.It red
+.It orange
+.It yellow
+.It green
+.It blue
+.It purple
+.It grey
+.El
+.Sh RETURN VALUES
+Returns 0 if successful, 1 otherwise.
+.Sh SEE ALSO
+.Xr setlabel 1
+.Xr chflags 1
+.Xr chmod 1
+.Xr GetFileInfo 1
+.Xr SetFile 1
+.Sh HISTORY
+The
+.Nm
+command was written for users of Mac OS X on the 18th of July 2007.
+.Sh AUTHORS
+.An Alastair J. Houghton

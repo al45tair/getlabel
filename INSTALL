@@ -1,0 +1,10 @@
+Installation Instructions
+=========================
+
+To install, go to Terminal, 'cd' to the folder containing the sources,
+then enter:
+
+  make && sudo make install
+
+The programs will install into /usr/local/bin, and will install manual
+pages into /usr/local/share/man.
